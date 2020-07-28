@@ -43,7 +43,7 @@
 <div class="container mt-5">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Главная</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('index') }}">Главная</a></li>
             @yield('breadcrumbs')
         </ol>
     </nav>
