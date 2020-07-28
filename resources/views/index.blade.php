@@ -11,10 +11,10 @@
                 <div class="card text-center">
                     <div class="d-flex justify-content-end align-items-center mt-1 mr-1">
                         <a class="text-warning" data-toggle="tooltip" title="Редактировать" href="#"><i class="fas fa-edit"></i></a>
-                        <form action="" method="post">
+                        <form action="{{ route('cupboards.destroy', $cupboard->slug) }}" method="post">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn text-danger" data-toggle="tooltip" title="Удалить"><i class="fas fa-trash"></i></button>
+                            <button type="submit" onclick="return confirm('Вы уверены?')" class="btn text-danger" data-toggle="tooltip" title="Удалить"><i class="fas fa-trash"></i></button>
                         </form>
                     </div>
                     <div class="card-body">
