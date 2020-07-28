@@ -10,7 +10,7 @@
             <div class="col-sm-12 col-md-4 col-lg-3">
                 <div class="card text-center">
                     <div class="d-flex justify-content-end align-items-center mt-1 mr-1">
-                        <a class="text-warning" data-toggle="tooltip" title="Редактировать" href="#"><i class="fas fa-edit"></i></a>
+                        <a class="text-warning" data-toggle="tooltip" title="Редактировать" href="{{ route('cupboards.edit', $cupboard->slug) }}"><i class="fas fa-edit"></i></a>
                         <form action="{{ route('cupboards.destroy', $cupboard->slug) }}" method="post">
                             @csrf
                             @method('delete')
