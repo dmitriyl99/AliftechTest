@@ -15,7 +15,10 @@
                 @csrf
                 <div class="form-group">
                     <label for="title">Название</label>
-                    <input type="text" name="title" placeholder="Введите название шкафа" id="title" class="form-control">
+                    <input type="text" name="title" placeholder="Введите название шкафа" value="{{ old('title') }}" id="title" class="form-control @error('title') is-invalid @enderror">
+                    @error('title')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-primary">Создать</button>
             </form>
