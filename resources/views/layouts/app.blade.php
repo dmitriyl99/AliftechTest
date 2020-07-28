@@ -41,6 +41,7 @@
     </div>
 </nav>
 <div class="container mt-5">
+    @include('layouts.components.alerts')
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('index') }}">Главная</a></li>
