@@ -43,7 +43,7 @@ class CupboardController extends Controller
      */
     public function show(Cupboard $cupboard)
     {
-        return view('cupboard.show', compact('cupboard'));
+        return view('cupboards.show', compact('cupboard'));
     }
 
     /**
@@ -54,7 +54,7 @@ class CupboardController extends Controller
      */
     public function edit(Cupboard $cupboard)
     {
-        return view('cupboard.edit', compact('cupboard'));
+        return view('cupboards.edit', compact('cupboard'));
     }
 
     /**
