@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cell;
 use App\Models\Cupboard;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -90,5 +91,10 @@ class CupboardController extends Controller
         $cupboard->delete();
 
         return redirect()->route('index')->with('success', "Шкаф $title удалён!");
+    }
+
+    public function cells(int $id)
+    {
+        return Cell::where('cupboard_id', $id)->get();
     }
 }
