@@ -3,7 +3,7 @@ Project for testing in Aliftech company.
 
 # How to run this project?
 
-## Install reuirements
+## Install requirements
 `composer install`
 ### Set up database in .env file
 Configure your database connection
