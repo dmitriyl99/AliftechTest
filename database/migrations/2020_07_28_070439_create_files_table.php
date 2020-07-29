@@ -17,7 +17,6 @@ class CreateFilesTable extends Migration
             $table->id();
 
             $table->string('filename');
-            $table->string('filepath');
             $table->string('mime')->nullable();
             $table->integer('size')->nullable();
             $table->unsignedBigInteger('folder_id');
