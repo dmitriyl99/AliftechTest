@@ -105,4 +105,20 @@ class FolderController extends Controller
         $folder->delete();
         return redirect()->back()->with('success', "Папка $title удалена!");
     }
+
+    /**
+     * Search folders
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
+    public function search(Request $request)
+    {
+        if ($request->has('search')) {
+            $query = $request->get('search');
+            $result = Folder::where('title', 'like', "%$query%")->get();
+            return view('folders.search', compact('result', 'query'));
+        }
+        return redirect()->back();
+    }
 }

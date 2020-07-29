@@ -18,4 +18,5 @@ Route::get('/', 'HomeController@index')->name('index');
 Route::resource('cupboards', 'CupboardController');
 Route::resource('cells', 'CellController');
 Route::resource('folders', 'FolderController');
+Route::get('/search', 'FolderController@search')->name('search');
 Route::resource('files', 'FileController');
