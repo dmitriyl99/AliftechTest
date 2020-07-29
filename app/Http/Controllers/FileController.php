@@ -76,7 +76,6 @@ class FileController extends Controller
      */
     public function destroy(File $file)
     {
-        Storage::disk('public')->delete($file->filename);
         $filename = $file->filename;
         $file->delete();
         return redirect()->back()->with('success', "Файл $filename удалён");
