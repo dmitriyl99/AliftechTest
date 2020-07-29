@@ -68,45 +68,6 @@ class FileController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\File  $file
-     * @return \Illuminate\View\View
-     */
-    public function edit(File $file)
-    {
-        $cupboards = Cupboard::all();
-        $currentFolder = $file->folder;
-        $currentCell = $currentFolder->cell;
-        $currentCupboard = $currentCell->cupboard;
-        $cells = $currentCupboard->cells;
-        $folders = $currentCell->folders;
-
-        return view('file.edit',
-            compact('file', 'currentCupboard', 'currentCell', 'currentFolder', 'cupboards', 'cells', 'folders'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\File  $file
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function update(Request $request, File $file)
-    {
-        $request->validate([
-            'cupboard_id' => 'required|integer',
-            'cell_id' => 'required|integer',
-            'folder_id' => 'required|integer',
-        ]);
-        $file->update($request->all());
-
-        return redirect()->route('folders.show', $file->folder->slug)
-            ->with('success', "Файл {$file->title} отредактирован");
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param \App\Models\File $file
