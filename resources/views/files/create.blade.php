@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', 'Добавить папку')
+@section('title', 'Добавить файл')
 
 @section('breadcrumbs')
-    <li class="breadcrumb-item active">Добавить папку</li>
+    <li class="breadcrumb-item active">Добавить файл</li>
 @endsection
 
 @section('content')
-    <h2 class="content-heading">Папки</h2>
+    <h2 class="content-heading">Файлы</h2>
     <div class="card">
-        <div class="card-header">Добавить папку</div>
+        <div class="card-header">Добавить файл</div>
         <div class="card-body">
             <form action="{{ route('files.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
