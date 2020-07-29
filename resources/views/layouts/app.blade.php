@@ -24,7 +24,7 @@
                     <a class="nav-link" href="{{ route('cupboards.create') }}">Добавить шкаф</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Добавить ячейку</a>
+                    <a class="nav-link" href="{{ route('cells.create') }}">Добавить ячейку</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Добавить папку</a>
