@@ -18,7 +18,7 @@
                         </form>
                     </div>
                     <div class="card-body">
-                        <a href="{{ route('cupboards.show', $cupboard->slug) }}" class="card-title">{{ $cupboard->title }}</a>
+                        <a href="{{ route('cupboards.show', $cupboard->slug) }}" class="card-title">{{ $cupboard->title }} ({{ $cupboard->cells()->count() }} ячеек)</a>
                     </div>
                 </div>
             </div>

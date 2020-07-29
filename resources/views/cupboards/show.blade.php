@@ -21,7 +21,7 @@
                         </form>
                     </div>
                     <div class="card-body">
-                        <a href="{{ route('cells.show', $cell->slug) }}" class="card-title">{{ $cell->title }}</a>
+                        <a href="{{ route('cells.show', $cell->slug) }}" class="card-title">{{ $cell->title }} ({{ $cell->folders()->count() }} папок)</a>
                     </div>
                 </div>
             </div>

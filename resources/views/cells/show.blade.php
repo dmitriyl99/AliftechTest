@@ -22,7 +22,7 @@
                         </form>
                     </div>
                     <div class="card-body">
-                        <a href="{{ route('folders.show', $folder->slug) }}" class="card-title">{{ $folder->title }}</a>
+                        <a href="{{ route('folders.show', $folder->slug) }}" class="card-title">{{ $folder->title }} ({{ $folder->files()->count() }} файлов)</a>
                     </div>
                 </div>
             </div>
