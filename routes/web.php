@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index')->name('index');
 
 Route::resource('cupboards', 'CupboardController');
-Route::get('api/cupboards/{id}/cells', 'CupboardController@cells');
 Route::resource('cells', 'CellController');
 Route::resource('folders', 'FolderController');
 Route::resource('files', 'FileController');
