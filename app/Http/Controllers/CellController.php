@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cell;
 use App\Models\Cupboard;
+use App\Models\Folder;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
@@ -102,5 +103,10 @@ class CellController extends Controller
         $cell->delete();
 
         return redirect()->back()->with('success', "Ячейка $title удалена!");
+    }
+
+    public function folders(int $id)
+    {
+        return Folder::where('cell_id', $id)->get();
     }
 }
