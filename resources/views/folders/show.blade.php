@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <h2 class="content-heading">Файлы <small>{{ $folder->title }}</small></h2>
+    <h2 class="content-heading">Папка "{{ $folder->title }}" <small>Файлы</small></h2>
     <div class="row">
         @foreach($folder->files as $file)
             <div class="col-sm-12 col-md-4 col-lg-3">

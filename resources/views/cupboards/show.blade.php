@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <h2 class="content-heading">Ячейки <small>{{ $cupboard->title }}</small></h2>
+    <h2 class="content-heading">Шкаф "{{ $cupboard->title }}" <small>Ячейки</small></h2>
     <div class="row">
         @foreach($cupboard->cells as $cell)
             <div class="col-sm-12 col-md-4 col-lg-3">

@@ -8,7 +8,7 @@
 @endsection
 
 @section('content')
-    <h2 class="content-heading">Папки <small>{{ $cell->title }}</small></h2>
+    <h2 class="content-heading">Ячейка "{{ $cell->title }}" <small>Папки</small></h2>
     <div class="row">
         @foreach($cell->folders as $folder)
             <div class="col-sm-12 col-md-4 col-lg-3">
