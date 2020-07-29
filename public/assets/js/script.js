@@ -9,12 +9,19 @@ jQuery(function () {
                 beforeSend: function (xhr) {
                     cupboardSelect.attr('disabled', 'disabled');
                     cellSelect.attr('disabled', 'disabled');
+                    if (folderSelect.length > 0) {
+                        folderSelect.attr('disabled', 'disabled');
+                    }
                 },
                 complete: function (xhr, status) {
                     if (status === 'success') {
                         let response = xhr.responseJSON;
                         cellSelect.empty();
                         cellSelect.append('<option selected disabled>-- Выберите ячейку --</option>');
+                        if (folderSelect.length > 0) {
+                            folderSelect.empty();
+                            folderSelect.append('<option selected disabled>-- Выберите папку --</option>');
+                        }
                         response.forEach(function (item) {
                             let html = `<option value='${item.id}'>${item.title}</option>`;
                             cellSelect.append(html);
