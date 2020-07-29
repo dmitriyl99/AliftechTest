@@ -62,9 +62,9 @@ class FileController extends Controller
     public function show(File $file)
     {
         if (strpos($file->mime, 'image') !== false or strpos($file->mime, 'pdf')) {
-            return response()->file(Storage::disk('public')->get($file->filename));
+            return response()->file(Storage::disk('public')->getAdapter()->applyPathPrefix($file->filename));
         }
-        return response()->download(Storage::disk('public')->get($file->filename));
+        return response()->download(Storage::disk('public')->getAdapter()->applyPathPrefix($file->filename));
     }
 
     /**
