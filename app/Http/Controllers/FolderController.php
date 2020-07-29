@@ -62,8 +62,9 @@ class FolderController extends Controller
     public function edit(Folder $folder)
     {
         $cupboards = Cupboard::all();
-
-        return view('folders.edit', compact('folder', 'cupboards'));
+        $currentCupboard = $folder->cell->cupboard;
+        $cells = $currentCupboard->cells;
+        return view('folders.edit', compact('folder', 'cupboards', 'cells', 'currentCupboard'));
     }
 
     /**
