@@ -37,7 +37,7 @@ class FileController extends Controller
             'file' => 'required|file'
         ]);
         $file = $request->file('file');
-        $filename = $file->getClientOriginalName() . '.' . $file->getClientOriginalExtension();
+        $filename = $file->getClientOriginalName();
         $mime = $file->getMimeType();
         $size = $file->getSize();
         Storage::disk('public')->put($filename, \Illuminate\Support\Facades\File::get($file));
