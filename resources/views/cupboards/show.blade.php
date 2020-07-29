@@ -4,7 +4,6 @@
 
 @section('breadcrumbs')
     <li class="breadcrumb-item">{{ $cupboard->title }}</li>
-    <li class="breadcrumb-item">Ячейки</li>
 @endsection
 
 @section('content')
